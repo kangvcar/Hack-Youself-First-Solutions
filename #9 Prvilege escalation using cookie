@@ -1,0 +1,5 @@
+#9 Prvilege escalation using cookie
+
+Summary: Privilege escalation grants permission for a page to an unauthorized user.
+Steps to reproduce: There are 2 steps to reproduce this issue, I am stating both, 1st step, reload the page and intercept the request, and change the cookie value of "isAdmin" to true from false and forward it. You will see "Admin" near "My account" and when you click it, it will take you to the users list along with their email and password. 2nd step is directly browse "/Secret/Users/" (https://hack-yourself-first.com/Secret/Users) and it will take you to the same page with users list along with their email and password.
+Impact: Due to this bug, an attacker can view, edit the details of all the users.
