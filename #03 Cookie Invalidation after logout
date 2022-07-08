@@ -1,4 +1,4 @@
-#3 Cookie Invalidation after logout
+#03 Cookie Invalidation after logout
 
 Summary: When users logout from the application, they strongly believe that no one can access their account. But cookie invalidation breaks that.
 Steps to reproduce: Login to your account in 2 browsers, logout from one and go to the second browser and reload the page, and you can see the session is still active in that browser
