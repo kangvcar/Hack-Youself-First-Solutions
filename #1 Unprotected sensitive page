@@ -1,0 +1,5 @@
+#1 Unprotected sensitive page
+
+Summary: Unprotected sensitive pages can make an attacker view sensitive informations like Username, Email, Password etc..
+Steps to reproduce: There is only one step to reproduce this vulnerability, visit "/api/admin/users" (https://hack-yourself-first.com/api/admin/users).
+Impact: This vulnerability allows an attacker to view all sensitive information of the users which may lead to full account takeover 
