@@ -1,0 +1,5 @@
+#6 IDOR in edit profile
+
+Summary: IDOR bug typically makes an attacker to view sensitive information, edit or even delete it from any random user of the application.
+Steps to reproduce: Login to your account, go to edit profile and have a look at the link in browser. It will say "https://hack-yourself-first.com/Account/UserProfile/...". Here you can see the user ID of yours, and by modifying it, you have access to another user's ptofile, and you can also modify it.
+Impact: Due to this bug, an attacker can view, change the username of every users of the application.
