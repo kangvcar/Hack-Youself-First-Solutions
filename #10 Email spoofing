@@ -1,0 +1,5 @@
+#10 Email spoofing
+
+Summary: SPF records are missing, and that leads to email spoofing.
+Steps to reproduce: Visit : "https://www.kitterman.com/spf/validate.html/". Then enter the domain name(hack-yourself-first.com) and click "Get SPF Record (if any)" and you will see "No valid SPF record found.". Now you can use any email spoofing tool to spoof emails to the victim.
+Impact: Due to this bug, an attacker can send fake emails to the victim and redirect them to phishing pages and steal credentials.
