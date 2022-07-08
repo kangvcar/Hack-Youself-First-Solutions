@@ -1,0 +1,5 @@
+#8 Mass account creation
+
+Summary: Lack of verification while creating an account leads to misuse of the victim's email, and aswell as mass account creation of multiple victims.
+Steps to reproduce: Create a list of email and password, and go to create account. In creeate account, enter any random values in the places and intercept the request in burp. Send the request to Intruder. In intruder,clear the default positions, add the values of "Email" , "Password" , "ConfirmPassword" and change the attack type to pitchfork. Go to payloads and in payload set 1, paste this email list and paste password list in payload set 2 and payload set 3 and start attack. Now all the email in the list have been created as account.
+Impact: Due to this bug, an attacker can create a lot of trash in the server + if the emails are real, then the emails has been misued by the attacker.
