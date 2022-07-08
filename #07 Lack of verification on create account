@@ -1,4 +1,4 @@
-#7 Lack of verification on create account
+#07 Lack of verification on create account
 
 Summary: Lack of verification while creating an account leads to misuse of the victim's email.
 Steps to reproduce: Create an account with any email, and you will see there is no verification process to verify if that email belongs to whom they say they are.
