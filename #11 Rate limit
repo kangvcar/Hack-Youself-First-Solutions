@@ -1,0 +1,5 @@
+#11 Rate limit
+
+Summary: Lack of rate limitting leads to bruteforce password.
+Steps to reproduce: Go to login page, enter a valid email and in password enter any random value. Capture the request in burp and send to intruder, clear default positions and add the value of the password field. Create a fake password list and at last enter the original password. In payloads, paste the password list and start attack. The original password will return 302 response and less length. 
+Impact: Due to this bug, an attacker can bruteforce password and gain access to victim's account.
