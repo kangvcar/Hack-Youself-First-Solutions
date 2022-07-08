@@ -1,4 +1,4 @@
-#1 Unprotected sensitive page / Information disclosure
+#01 Unprotected sensitive page / Information disclosure
 
 Summary: Unprotected sensitive pages can make an attacker view sensitive informations like Username, Email, Password etc..
 Steps to reproduce: There is only one step to reproduce this vulnerability, visit "/api/admin/users" (https://hack-yourself-first.com/api/admin/users).
