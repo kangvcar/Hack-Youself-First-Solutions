@@ -1,0 +1,5 @@
+#12 Mass profile modifying using IDOR
+
+Summary: IDOR, not only viewing or modifying a specific user, but can also be used to modify all the users profile.
+Steps to reproduce: Go to edit profile, and enter the username you want. Click save and capture the request in burp, and send to intruder. In intruder, add the value of UserId, and change the payload type to numbers. In payload options, Enter 1 in From, 500(for example) in To, and 1 in step and start attack. At the end of the attack, you can see 302 response to all existing user id, and 500 response for the ids that dont exist, and you can also notice that all the username have been changed.
+Impact: Due to this bug, an attacker can do mass user profile edit, which leads to reputational damage.
