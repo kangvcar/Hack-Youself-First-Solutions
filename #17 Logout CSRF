@@ -1,4 +1,4 @@
-#16 Logout CSRF
+#17 Logout CSRF
 
 Summary: CSRF (Cross-Site Request Forgery) in logout page makes a victim to logout from their account
 Steps to reproduce: Click Log Off and capture the request in burp. Then right click on the request, click on engagement tools, and Generate CSRF PoC. In options, enable Include auto-submit script, and click Regenerate and copy the code and drop the request. Now, create a HTML file in your system and paste the copied CSRF PoC and save and run the file. Now you can see that you are logged off from your account.
