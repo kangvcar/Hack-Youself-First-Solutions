@@ -2,4 +2,4 @@
 
 Summary: CSRF (Cross-Site Request Forgery) in login page makes a victim to login to the attacker's account.
 Steps to reproduce: Go to login page and enter your email and password. Click login and capture the request in burp. Then right click on the request, click on engagement tools, and Generate CSRF PoC. In options, enable Include auto-submit script, and click Regenerate and copy the code and drop the login request. Now, create a HTML file in your system and paste the copied CSRF PoC and save and run the file. Now you can see that you are logged in to your account.
-Impact: This is not a big issue on this application as it has nothing sensitive to do with. To be practical with this issue, if the victim changes the password, the attcker can view the password, and if the victim uses it in all application, then this causes a big security threat.
+Impact: This is not a big issue on this application as it has nothing sensitive to do with. To be practical with this issue, if the victim changes the password, the attcker can view the password, and if the victim uses it in all application, then this causes a security threat.
