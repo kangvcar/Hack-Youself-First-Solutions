@@ -1,0 +1,4 @@
+#22 No 2 Factor Authorization
+
+Summary: 2 FA creates an additional security, where as this application fails to create that.
+Impact: Due to this bug, the users compromise their account believing their password cannot be cracked.
