@@ -1,0 +1,5 @@
+#23 SQL injection
+
+Summary: SQL injection leads to view all the content in the table.
+Steps to reproduce: Visit : "https://hack-yourself-first.com/CarsByCylinders?Cylinders=V12", you will see some content in the page. Now reload the page and capture the request in burp and modify the request to : "GET /CarsByCylinders?Cylinders=V12'+OR+1=1-- - HTTP/2" and forward. Now you will see additional content.
+Impact: Due to this bug, an attacker can view additional information, which the application does not want an attacker to see.
